@@ -3,7 +3,8 @@
 
  
 
-abstract class Dinosaur 
+class Tyronnausorus extends Dinosaur
+  
 
 {
 
@@ -14,6 +15,7 @@ abstract class Dinosaur
     public const GENDER_MALE = 'Male';
     public const GENDER_FEMALE = 'Female';
     private const ADULT_AGE = 21;
+    private const RACE = "Tyranausore";
 
 
     
@@ -37,6 +39,9 @@ abstract class Dinosaur
     	return $this->name;
     }
 
+    public function getRace(): string {
+    	return self::RACE;
+    }
     
     public function isAdult(): bool {
     	return $this->age > self::ADULT_AGE;
@@ -50,9 +55,16 @@ abstract class Dinosaur
     	return $this->gender === self::GENDER_FEMALE;
     }
 
-    public abstract function roar(): string ;
-
-    public abstract function getRace(): string ;
-
+    public function roar(): string {
+        if (!$this->isAdult()) {
+            return "roar...";
+        }
+        elseif ($this->isMale()) {
+            return "ROOOAAAAAAR!!!!";
+        }
+        else {
+            return "GGGGGGRRRROOOOAAAAARRRRRR!!!!";
+        }
+    }
 
 }
