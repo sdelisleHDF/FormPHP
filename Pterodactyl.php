@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 <?php
 
@@ -31,4 +32,37 @@ class Pterodactyl extends Dinosaur  implements LandDinosaur, FlyingDinosaur
     {
         return 'I\'m Flyning  very fast!';
     }
+=======
+<?php
+
+
+require_once('./FlyingDinosaur.php');
+require_once('./LandDinosaur.php');
+
+
+class Pterodactyl extends Dinosaur implements FlyingDinosaur, LandDinosaur
+ 
+{
+private const RACE = "Pterodactyl";
+
+
+    public function roar(): string {
+        return "roar...";
+    }
+
+    public function fly(): string {
+        return "fly...";
+    }
+
+    public function walk(): string {
+        return "walk...";
+    }
+
+    public function getRace(): string {
+        return self::RACE;
+    }
+    
+ 
+
+>>>>>>> Stashed changes
 }
