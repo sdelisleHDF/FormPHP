@@ -1,17 +1,13 @@
-<?php // src/KNPLabs/Controller/ViewRenderer.php
-    
- 
-    
-    namespace KNPLabs\Controller;
+<?php
 
-    class ViewRenderer
+namespace KNPLabs\Controller;
+
+class ViewRenderer
+{
+    public static function render(string $viewPath, array $parameters = []): void
     {
-        public static function render(string $viewPath, array $parameters = []): void
-        {
-            extract($parameters);
-        
-     
-        
-            require __DIR__ . '/../views/' . $viewPath;
-        }
+        extract($parameters);
+
+        require __DIR__ . '/../views/' . $viewPath;
     }
+}

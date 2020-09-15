@@ -1,4 +1,4 @@
-<?php // src/KNPLabs/Routing/Controller.php
+<?php
 
 namespace KNPLabs\Routing;
 

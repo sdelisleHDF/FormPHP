@@ -1,38 +1,25 @@
-<?php // src/KNPLabs/Controller/ListDinosaurs.php
-    
- 
-    
+<?php
+
 namespace KNPLabs\Controller;
 
-use Faker\Factory;
-    
 use KNPLabs\Real\Provider\DinosaursProvider;
-    
 use KNPLabs\Routing\Controller;
 
 class ListDinosaurs implements Controller
 {
-    private DinosaursProvider $dinosaursProvider;
-    
- 
-    
+    private $dinosaursProvider;
+
     public function __construct(DinosaursProvider $dinosaursProvider)
     {
         $this->dinosaursProvider = $dinosaursProvider;
     }
-    
- 
-    
+
     public function handleRequest(): void
     {
         $dinosaurs = $this->dinosaursProvider->all();
-    
- 
-    
+
         ViewRenderer::render('listDinosaurs.php', [
-    
             'dinosaurs' => $dinosaurs
-    
         ]);
     }
 }
