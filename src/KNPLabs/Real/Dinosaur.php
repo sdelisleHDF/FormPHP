@@ -36,9 +36,16 @@ abstract class Dinosaur
     	return $this->name;
     }
 
+    public function getAge(): string {
+    	return $this->age;
+    }
     
     public function isAdult(): bool {
     	return $this->age > self::ADULT_AGE;
+    }
+
+    public function getGender(): string {
+    	return $this->gender;
     }
 
     public function isMale(): bool {

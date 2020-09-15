@@ -7,18 +7,34 @@ use KNPLabs\Real\Dinosaur\Spinosaurus;
 use KNPLabs\Real\Dinosaur\Triceratops;
 use KNPLabs\Real\Dinosaur\Tyronnausorus;
 
+
 include('./vendor/autoload.php');
+
+// use the factory to create a Faker\Generator instance
+$faker = Faker\factory::create();
+
+$dinosaurs = [];
 
  
 try {
+    for ($i=0; $i < 5; $i++) { 
+      $dinosaurs[] = new Triceratops($faker->firstName,  $faker->randomElement([Dinosaur::GENDER_MALE,Dinosaur::GENDER_FEMALE]), rand(1,100));
+    }
 
-    $denver = new Triceratops('Denver', Dinosaur::GENDER_MALE, 8);
-    $rex = new Tyronnausorus('Rex',Dinosaur::GENDER_MALE, 23);
-    $sirene = new Spinosaurus('Sirene', Dinosaur::GENDER_FEMALE, 25);
-    $paula = new Pterodactyl('Paula', Dinosaur::GENDER_FEMALE, 46);
+    for ($i=0; $i < 5; $i++) { 
+      $dinosaurs[] = new Tyronnausorus($faker->firstName,  $faker->randomElement([Dinosaur::GENDER_MALE,Dinosaur::GENDER_FEMALE]), rand(1,100));
+    }
+
+    for ($i=0; $i < 5; $i++) { 
+      $dinosaurs[] = new Spinosaurus($faker->firstName,  $faker->randomElement([Dinosaur::GENDER_MALE,Dinosaur::GENDER_FEMALE]), rand(1,100));
+    }
+
+    for ($i=0; $i < 5; $i++) { 
+      $dinosaurs[] = new Pterodactyl($faker->firstName,  $faker->randomElement([Dinosaur::GENDER_MALE,Dinosaur::GENDER_FEMALE]), rand(1,100));
+    }
 
   } catch (InvalidArgumentException $e) {
-
+    var_dump($e);
     echo "argument invalide";
 
 } 
@@ -32,16 +48,15 @@ try {
   <body>
 
     <h1>PHP Training</h1>
-
-    <p><?php echo $denver->getName() . ': '. $denver->roar(). ': '.$denver->getRace() . ': '. $denver->walk()     ; ?></p>
-
-    <p><?php echo $rex->getName() . ': '. $rex->roar(). ': '.$rex->getRace() . ': '. $rex->walk()  ; ?></p>
-
-    <p><?php echo $sirene->getName() . ': '. $sirene->roar(). ': '.$sirene->getRace() . ': '. $sirene->swim(). ': '. $sirene->walk() ; ?></p>
-
-    <p><?php echo $paula->getName() . ': '. $paula->roar(). ': '.$paula->getRace() . ': '. $paula->fly(). ': '. $paula->walk() ;  ?></p>
-
-    </p>
+	
+    <?php foreach ($dinosaurs as $dinosaur) : ?>
+      <div>
+        <h2><?php echo $dinosaur->getName(); ?></h2>
+        <strong><?php echo ($dinosaur->isAdult()?"Adult" :"Baby")." (".$dinosaur->getAge().") ".$dinosaur->getRace()." ".$dinosaur->getGender() ?> </strong>
+        <p><?php echo $dinosaur->roar(); ?></p>
+      </div>
+      <hr>
+    <?php endforeach; ?>
 
   </body>
 
