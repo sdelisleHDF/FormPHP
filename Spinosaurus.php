@@ -3,14 +3,14 @@
 
 require_once('Dinosaur.php');
 require_once('LandDinosaur.php');
-
+require_once('SeaDinosaur.php');
  
 
-class Triceratops extends Dinosaur  implements LandDinosaur
+class Spinosaurus extends Dinosaur  implements LandDinosaur, SeaDinosaur
   
 
 {
-    private const RACE = "Triceratops";
+    private const RACE = "Spinosaurus";
 
     public function getRace(): string {
     	return self::RACE;
@@ -20,10 +20,15 @@ class Triceratops extends Dinosaur  implements LandDinosaur
         if (!$this->isAdult()) {
             return "moo...";
         }
-        else {return "MOOOOOOOO!!!!";}
+        else {return "GLOGLOLGO!!!!";}
     }
     public function walk(): string
     {
         return 'I\'m running fast!';
+    }
+
+    public function swim(): string
+    {
+        return 'I\'m swimming very fast!';
     }
 }
