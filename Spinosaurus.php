@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 
 <?php
 
@@ -33,38 +32,3 @@ class Spinosaurus extends Dinosaur  implements LandDinosaur, SeaDinosaur
         return 'I\'m swimming very fast!';
     }
 }
-=======
-<?php
-
-require_once('./SeaDinosaur.php');
-require_once('./LandDinosaur.php');
-
-
-class Spinosaurus extends Dinosaur implements SeaDinosaur, LandDinosaur
- 
-{
-
-    private const RACE = "Spinosaurus";
-    
-    public function roar(): string {
-        return "roar...";
-    }
-
-    public function swim(): string {
-        return "swim...";
-    }
-
-    public function walk(): string {
-        return "walk...";
-    }
-
-    public function getRace(): string {
-        return self::RACE;
-    }
-    
-
-
- 
-
-}
->>>>>>> Stashed changes

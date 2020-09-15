@@ -14,15 +14,8 @@ try {
 
     $denver = new Triceratops('Denver', Dinosaur::GENDER_MALE, 8);
     $rex = new Tyronnausorus('Rex',Dinosaur::GENDER_MALE, 23);
-<<<<<<< Updated upstream
     $sirene = new Spinosaurus('Sirene', Dinosaur::GENDER_FEMALE, 25);
     $paula = new Pterodactyl('Paula', Dinosaur::GENDER_FEMALE, 46);
-=======
-    $paula = new Triceratops('Paula', Dinosaur::GENDER_FEMALE, 46);
-    $spin = new Spinosaurus('Spin',Dinosaur::GENDER_MALE, 23);
-    $ptero = new Pterodactyl('Ptero', Dinosaur::GENDER_FEMALE, 46);
-
->>>>>>> Stashed changes
 
   } catch (InvalidArgumentException $e) {
 
@@ -30,10 +23,6 @@ try {
 
 } 
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 ?>
 
  
@@ -50,13 +39,7 @@ try {
 
     <p><?php echo $sirene->getName() . ': '. $sirene->roar(). ': '.$sirene->getRace() . ': '. $sirene->swim(). ': '. $sirene->walk() ; ?></p>
 
-<<<<<<< Updated upstream
     <p><?php echo $paula->getName() . ': '. $paula->roar(). ': '.$paula->getRace() . ': '. $paula->fly(). ': '. $paula->walk() ;  ?></p>
-=======
-    <p><?php echo $spin->getName() . ': '. $spin->roar(). ': '.$spin->getRace() ; ?></p>
-
-    <p><?php echo $ptero->getName() . ': '. $ptero->roar(). ': '.$ptero->getRace() ; ?></p>
->>>>>>> Stashed changes
 
     </p>
 
