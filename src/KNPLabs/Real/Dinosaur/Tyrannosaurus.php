@@ -5,7 +5,7 @@ namespace KNPLabs\Real\Dinosaur;
 use KNPLabs\Real\Dinosaur;
 use KNPLabs\Real\LandDinosaur;
 
-class Tyronnausorus extends Dinosaur implements LandDinosaur
+class Tyrannosaurus extends Dinosaur implements LandDinosaur
 
   
 
