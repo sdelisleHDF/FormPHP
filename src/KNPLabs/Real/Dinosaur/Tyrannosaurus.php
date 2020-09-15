@@ -6,29 +6,23 @@ use KNPLabs\Real\Dinosaur;
 use KNPLabs\Real\LandDinosaur;
 
 class Tyrannosaurus extends Dinosaur implements LandDinosaur
-
-  
-
 {
-
-
-
     private const RACE = "Tyranausore";
 
 
-    public function getRace(): string {
-    	return self::RACE;
+    public function getRace(): string
+    {
+        return self::RACE;
     }
     
 
-    public function roar(): string {
+    public function roar(): string
+    {
         if (!$this->isAdult()) {
             return "roar...";
-        }
-        elseif ($this->isMale()) {
+        } elseif ($this->isMale()) {
             return "ROOOAAAAAAR!!!!";
-        }
-        else {
+        } else {
             return "GGGGGGRRRROOOOAAAAARRRRRR!!!!";
         }
     }
@@ -38,6 +32,4 @@ class Tyrannosaurus extends Dinosaur implements LandDinosaur
     {
         return 'I\'m running fast!';
     }
-
 }
-

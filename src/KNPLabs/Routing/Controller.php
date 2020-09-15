@@ -2,7 +2,7 @@
 
 namespace KNPLabs\Routing;
 
-interface Controller  
-{  
-    public function handleRequest(): void;  
+interface Controller
+{
+    public function handleRequest(): void;
 }

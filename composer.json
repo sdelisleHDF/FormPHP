@@ -2,7 +2,8 @@
     "name": "hdf/dinosaurs",
     "type": "project",
     "require": {
-        "fzaninotto/faker": "^1.9"
+        "fzaninotto/faker": "^1.9",
+        "friendsofphp/php-cs-fixer": "^2.16"
 
     },
     "autoload": {

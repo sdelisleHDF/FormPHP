@@ -6,21 +6,22 @@ use KNPLabs\Real\Dinosaur;
 use KNPLabs\Real\FlyingDinosaur;
 use KNPLabs\Real\LandDinosaur;
 
-class Pterodactyl extends Dinosaur  implements LandDinosaur, FlyingDinosaur
-  
-
+class Pterodactyl extends Dinosaur implements LandDinosaur, FlyingDinosaur
 {
     private const RACE = "Pterodactyl";
 
-    public function getRace(): string {
-    	return self::RACE;
+    public function getRace(): string
+    {
+        return self::RACE;
     }
     
-        public function roar(): string {
+    public function roar(): string
+    {
         if (!$this->isAdult()) {
             return "moo...";
+        } else {
+            return "WVOWVOWVO!!!!";
         }
-        else {return "WVOWVOWVO!!!!";}
     }
     public function walk(): string
     {

@@ -2,11 +2,13 @@
 
 class Dinosaur
 {
-    public function roar(): string {
+    public function roar(): string
+    {
         return 'roar.mp3';
     }
 
-    public function getRace(): string {
+    public function getRace(): string
+    {
         return 'Robot dinosaur';
     }
 

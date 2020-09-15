@@ -2,13 +2,11 @@
 
 namespace KNPLabs\Real;
 
-abstract class Dinosaur 
-
+abstract class Dinosaur
 {
-
-    private  $name;
-    private  $gender;
-    private  $age;
+    private $name;
+    private $gender;
+    private $age;
 
     public const GENDER_MALE = 'Male';
     public const GENDER_FEMALE = 'Female';
@@ -17,48 +15,50 @@ abstract class Dinosaur
 
     
 
-    public function __construct(string $name, string $gender,int $age) {
-
+    public function __construct(string $name, string $gender, int $age)
+    {
         if (($gender!==self::GENDER_MALE) && ($gender!==self::GENDER_FEMALE)) {
             throw new \InvalidArgumentException('Genre non valide');
         }
 
 
-    	$this->name = $name;
+        $this->name = $name;
         $this->age = $age;
         $this->gender = $gender;
-
-
     }
 
 
-    public function getName(): string {
-    	return $this->name;
+    public function getName(): string
+    {
+        return $this->name;
     }
 
-    public function getAge(): string {
-    	return $this->age;
+    public function getAge(): string
+    {
+        return $this->age;
     }
     
-    public function isAdult(): bool {
-    	return $this->age > self::ADULT_AGE;
+    public function isAdult(): bool
+    {
+        return $this->age > self::ADULT_AGE;
     }
 
-    public function getGender(): string {
-    	return $this->gender;
+    public function getGender(): string
+    {
+        return $this->gender;
     }
 
-    public function isMale(): bool {
+    public function isMale(): bool
+    {
         return $this->gender === self::GENDER_MALE;
     }
 
-    public function isFemale(): bool {
-    	return $this->gender === self::GENDER_FEMALE;
+    public function isFemale(): bool
+    {
+        return $this->gender === self::GENDER_FEMALE;
     }
 
-    public abstract function roar(): string ;
+    abstract public function roar(): string ;
 
-    public abstract function getRace(): string ;
-
-
+    abstract public function getRace(): string ;
 }

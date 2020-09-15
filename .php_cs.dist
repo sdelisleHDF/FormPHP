@@ -1,24 +1,8 @@
 <?php
 
-use PedroTroller\CS\Fixer\Fixers;
-use PedroTroller\CS\Fixer\RuleSetFactory;
-
 $config = PhpCsFixer\Config::create()
-    ->setRules(PedroTroller\CS\Fixer\RuleSetFactory::create()
-        ->symfony()
-        ->phpCsFixer()
-        ->enable('PedroTroller/ordered_with_getter_and_setter_first')
-        ->enable('PedroTroller/line_break_between_method_arguments', [ 'max-args' => 4, 'max-length' => 120, 'automatic-argument-merge' => true ])
-        ->enable('PedroTroller/line_break_between_statements')
-        ->enable('PedroTroller/comment_line_to_phpdoc_block')
-        ->enable('PedroTroller/doctrine_migrations')
-        ->enable('PedroTroller/phpspec')
-        ->disable('phpdoc_to_comment')
-        ->getRules()
-    )
-    ->registerCustomFixers(new PedroTroller\CS\Fixer\Fixers())
     ->setFinder(
-        PhpCsFixer\Finder::create()->exclude(['src/Application/GraphQL/Type', 'var', 'vendor', 'bin', 'docker'])->in(__DIR__)
+        PhpCsFixer\Finder::create()->exclude(['vendor'])->in(__DIR__)
     )
 ;
 
