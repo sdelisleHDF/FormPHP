@@ -1,13 +1,13 @@
 
 <?php
 
- 
+use KNPLabs\Real\Dinosaur;
+use KNPLabs\Real\Dinosaur\Pterodactyl;
+use KNPLabs\Real\Dinosaur\Spinosaurus;
+use KNPLabs\Real\Dinosaur\Triceratops;
+use KNPLabs\Real\Dinosaur\Tyronnausorus;
 
-require_once('./Dinosaur.php');
-require_once('./Tyronnausorus.php');
-require_once('./Triceratops.php');
-require_once('./Spinosaurus.php');
-require_once('./Pterodactyl.php');
+include('./src/autoloader.php');
 
  
 try {

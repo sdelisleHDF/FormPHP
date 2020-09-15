@@ -1,7 +1,6 @@
-
 <?php
 
- 
+namespace KNPLabs\Real;
 
 abstract class Dinosaur 
 
@@ -21,7 +20,7 @@ abstract class Dinosaur
     public function __construct(string $name, string $gender,int $age) {
 
         if (($gender!==self::GENDER_MALE) && ($gender!==self::GENDER_FEMALE)) {
-            throw new InvalidArgumentException('Genre non valide');
+            throw new \InvalidArgumentException('Genre non valide');
         }
 
 

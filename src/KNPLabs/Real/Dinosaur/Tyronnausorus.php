@@ -1,9 +1,9 @@
-
 <?php
 
-require_once('Dinosaur.php');
-require_once('LandDinosaur.php');
+namespace KNPLabs\Real\Dinosaur;
 
+use KNPLabs\Real\Dinosaur;
+use KNPLabs\Real\LandDinosaur;
 
 class Tyronnausorus extends Dinosaur implements LandDinosaur
 

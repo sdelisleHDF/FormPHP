@@ -1,8 +1,7 @@
-
 <?php
 
  
-
+namespace KNPLabs\Real;
 interface LandDinosaur
 
 {

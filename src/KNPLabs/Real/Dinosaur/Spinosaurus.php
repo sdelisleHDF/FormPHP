@@ -1,10 +1,9 @@
-
 <?php
+namespace KNPLabs\Real\Dinosaur;
 
-require_once('Dinosaur.php');
-require_once('LandDinosaur.php');
-require_once('SeaDinosaur.php');
- 
+use KNPLabs\Real\Dinosaur;
+use KNPLabs\Real\LandDinosaur;
+use KNPLabs\Real\SeaDinosaur;
 
 class Spinosaurus extends Dinosaur  implements LandDinosaur, SeaDinosaur
   
