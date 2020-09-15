@@ -7,7 +7,7 @@ use KNPLabs\Real\Dinosaur\Spinosaurus;
 use KNPLabs\Real\Dinosaur\Triceratops;
 use KNPLabs\Real\Dinosaur\Tyronnausorus;
 
-include('./src/autoloader.php');
+include('./vendor/autoload.php');
 
  
 try {

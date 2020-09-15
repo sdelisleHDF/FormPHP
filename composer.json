@@ -1,0 +1,13 @@
+{
+    "name": "hdf/dinosaurs",
+    "type": "project",
+    "require": {
+        "fzaninotto/faker": "^1.9"
+
+    },
+    "autoload": {
+        "psr-4": {
+            "KNPLabs\\": "src/KNPLabs"
+        }
+    }
+}
