@@ -25,15 +25,19 @@ class Router
     {
         $this->controllers[$path] = $controller;
     }
+    
     public function handleRequest(): void
     {
-        foreach ($this->controllers as $route => $controller) {
-            if ($this->currentURL === $route) {
-                $controller->handleRequest();
+        $currentRoute = explode('?', $this->currentURL)[0];
 
-                return;
+        foreach ($this->controllers as $route => $controller) {
+            if ($currentRoute === $route) {
+                $controller->handleRequest();
+              return;
             }
         }
+
+ 
 
         throw new NotFoundException();
     }

@@ -16,10 +16,21 @@ class ListDinosaurs implements Controller
 
     public function handleRequest(): void
     {
-        $dinosaurs = $this->dinosaursProvider->all();
+        if (isset($_GET['q'])) {
+            $rq = $_GET['q'];
+        } else {
+            $rq='';
+        }
+        if ($rq) {
+            $dinosaurs = $this->dinosaursProvider->searchByName($rq);
+        }
+        else {
+            $dinosaurs = $this->dinosaursProvider->all();
+        }
 
-        ViewRenderer::render('listDinosaurs.php', [
-            'dinosaurs' => $dinosaurs
+       ViewRenderer::render('listDinosaurs.php', [
+            'dinosaurs' => $dinosaurs,
+            'q'=>$rq
         ]);
     }
 }
