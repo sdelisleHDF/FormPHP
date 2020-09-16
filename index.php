@@ -29,12 +29,13 @@ use Faker\Factory;
     
    
     
-  $router->addController('/', new ListDinosaurs($dinosaursProvider));
+  $router->addController('/formPHP/', new ListDinosaurs($dinosaursProvider));
     
    
     
   try {
       $router->handleRequest();
   } catch (NotFoundException $e) {
-      echo 'Not found';
+    var_dump($router);  
+    echo 'Not found';
   }
