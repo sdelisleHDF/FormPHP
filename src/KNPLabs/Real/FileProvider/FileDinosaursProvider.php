@@ -2,24 +2,51 @@
 
 namespace KNPLabs\Real\FileProvider;
 
-use KNPLabs\Real\Dinosaur;
+use Exception;
+use InvalidArgumentException;
+use KNPLabs\Real\DinosaurFactory;
 use KNPLabs\Real\Provider\DinosaursProvider;
-use KNPLabs\Real\Dinosaur\Pterodactyl;
-use KNPLabs\Real\Dinosaur\Triceratops;
-use KNPLabs\Real\Dinosaur\Tyrannosaurus;
 
 class FileDinosaursProvider implements DinosaursProvider
 {
-    public function all(): array
+    private $storageFilePath;
+
+    public function __construct(string $storageFilePath)
     {
-        $fileJson = json_decode(file_get_contents('./var/data/dinosaurs.json'));
-        var_dump($fileJson);
-        return [];
+        $this->storageFilePath = $storageFilePath;
     }
 
-    public function searchByName(string $ch): array
+    public function all(): array
     {
-        
-        return [] ;
+        try {
+            $rawDinosaurs = file_get_contents($this->storageFilePath);
+            $rawDinosaurs = json_decode($rawDinosaurs, true);
+        } catch (Exception $e) {
+            return [];
+        }
+
+        $dinosaurs = [];
+
+        foreach ($rawDinosaurs as $rawDinosaur) {
+            try {
+                $dinosaurs[] = DinosaurFactory::create(
+                    $rawDinosaur['race'],
+                    $rawDinosaur['name'],
+                    $rawDinosaur['gender'],
+                    $rawDinosaur['age']
+                );
+            } catch (InvalidArgumentException $e) {
+                continue;
+            }
+        }
+
+        return $dinosaurs;
+    }
+
+    public function searchByName(string $name): array
+    {
+        return array_filter($this->all(), function ($dinosaur) use ($name) {
+            return 1 === preg_match('/'. $name . '/', $dinosaur->getName());
+        });
     }
 }

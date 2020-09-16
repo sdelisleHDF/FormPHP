@@ -1,4 +1,6 @@
-<?php // robot dinosaur
+<?php
+
+namespace KNPLabs\Robot\Dinosaur;
 
 class Dinosaur
 {

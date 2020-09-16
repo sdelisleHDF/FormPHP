@@ -25,7 +25,7 @@ class Router
     {
         $this->controllers[$path] = $controller;
     }
-    
+
     public function handleRequest(): void
     {
         $currentRoute = explode('?', $this->currentURL)[0];
@@ -36,8 +36,6 @@ class Router
               return;
             }
         }
-
- 
 
         throw new NotFoundException();
     }

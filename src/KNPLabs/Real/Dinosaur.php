@@ -12,9 +12,6 @@ abstract class Dinosaur
     public const GENDER_FEMALE = 'Female';
     private const ADULT_AGE = 21;
 
-
-    
-
     public function __construct(string $name, string $gender, int $age)
     {
         if (($gender!==self::GENDER_MALE) && ($gender!==self::GENDER_FEMALE)) {
@@ -37,7 +34,7 @@ abstract class Dinosaur
     {
         return $this->age;
     }
-    
+
     public function isAdult(): bool
     {
         return $this->age > self::ADULT_AGE;
@@ -58,7 +55,17 @@ abstract class Dinosaur
         return $this->gender === self::GENDER_FEMALE;
     }
 
-    abstract public function roar(): string ;
+    abstract public function roar(): string;
 
-    abstract public function getRace(): string ;
+    abstract public function getRace(): string;
+
+    public function toArray(): array
+    {
+        return [
+            'name' => $this->name,
+            'gender' => $this->gender,
+            'age' => $this->age,
+            'race' => $this->getRace(),
+        ];
+    }
 }
