@@ -1,11 +1,9 @@
-<?php // src/KNPLabs/Routing/NotFoundException.php
-    
- 
-    
-    namespace KNPLabs\Routing;
+<?php
 
-    use Exception;
+namespace KNPLabs\Routing;
 
-    class NotFoundException extends Exception
-    {
-    }
+use Exception;
+
+class NotFoundException extends Exception
+{
+}
