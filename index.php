@@ -17,7 +17,7 @@ try {
     return;
 }
 
-$router->addController('/', new ListDinosaurs($dinosaursProvider));
+$router->addController('/FormPHP/', new ListDinosaurs($dinosaursProvider));
 
 try {
     $router->handleRequest();
