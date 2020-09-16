@@ -28,7 +28,7 @@ class Router
 
     public function handleRequest(): void
     {
-        $currentRoute = explode('?', $this->currentURL)[0];
+        $currentRoute = $this->currentURL;
 
         foreach ($this->controllers as $route => $controller) {
             if ($currentRoute === $route) {

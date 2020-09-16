@@ -20,7 +20,7 @@ try {
     return;
 }
 
-$router->addController('/FormPHP', new ListDinosaurs($dinosaursProvider));
+$router->addController('/FormPHP/', new ListDinosaurs($dinosaursProvider));
 $router->addController('/FormPHP/create', new CreateDinosaur($dinosaurPersister));
 
 try {
